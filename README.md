@@ -72,7 +72,7 @@ dotnet build
 dotnet run
 ```
 
-Now you can continue with [Getting Started](../Documentation/README.md#your-first-picogk-app).  Be sure to edit the `PicoGK/PicoGK__Config.cs` to set `strPicoGKLib` to  "/usr/local/lib/picogk.1.0.so".  The app does not consume the linux shared library `.so` extension properly without the full path.
+Now you can continue with [Getting Started](https://github.com/leap71/PicoGK/blob/main/Documentation/README.md#your-first-picogk-app).  Be sure to edit the `PicoGK/PicoGK__Config.cs` to set `strPicoGKLib` to  "/usr/local/lib/picogk.1.0.so".  The app does not consume the linux shared library `.so` extension properly without the full path.
 
 ## Docker Config
 
