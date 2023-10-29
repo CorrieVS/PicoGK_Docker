@@ -1,22 +1,13 @@
 # Compile the PickGKRuntime from Source in Docker
 
-While the pre-compiled PicoGKRuntime library is included in `PicoGK/Runtime/linux`, you may want to develop and compile it from source.  Follow these steps.
+While the pre-compiled PicoGKRuntime library is included in `PicoGK/Runtime/linux_x64`, you may want to develop and compile it from source.  Follow these steps.
 
-### Setup your Docker container
 
-Follow the [Docker Setup Instructions](README.md) up to and including [Build the Docker Image and Run the Container](README.md#build-the-docker-image-and-run-the-container).
-
-Then, open a bash shell on the host and clone the repository.  You will need the "patch" branch:
-```
-cd picogk
-git clone --recursive https://github.com/CorrieVS/PicoGKRuntime.git
-cd PicoGKRuntime && git checkout patch
-```
 ### Configure and Build the Runtime
 
 Create a Build directory, open a container, and navigate to it:
 ```
-mkdir Build
+mkdir PicoGKRuntime/Build
 pico-start    # if a container is not already running
 pico-shell    # to open a shell inside it
 cd PicoGKRuntime/Build
