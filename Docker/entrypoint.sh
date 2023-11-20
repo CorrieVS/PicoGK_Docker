@@ -3,7 +3,7 @@
 set -e
 
 echo "in the entrypoint script"
-while getopts :u:n: flag; do
+while getopts :u:n:l: flag; do
     case "${flag}" in
         u)
           userid=${OPTARG}
@@ -49,12 +49,9 @@ chown -R $userid /home/$uname
 echo "$uname ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/$uname && \
     chmod 0440 /etc/sudoers.d/$uname
 
-# add PicoGKRuntime library to /usr/local/lib
-if [ -f "$PICOGK_LIB" ]; then
-  echo "adding PicoGKRuntime library to /usr/local/lib"
-  cp $PICOGK_LIB /usr/local/lib; else
-  echo "PicoGKRuntime library not found at $PICOGK_LIB"
-fi
+# give the host user sudo permissions
+echo "$uname ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/$uname && \
+    chmod 0440 /etc/sudoers.d/$uname
 
 #execute the command passed to the docker run
 exec /bin/bash

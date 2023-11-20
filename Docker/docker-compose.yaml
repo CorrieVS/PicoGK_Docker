@@ -25,6 +25,8 @@ services:
       - ../projects:/root/picogk/projects
       # mount the X11 socket to enable graphics display
       - /tmp/.X11-unix:/tmp/.X11-unix
+      # non-nvidia users, enable graphics drivers
+      # - /dev/dri:/dev/dri
     # give the container access to the host's network
     network_mode: host
     # enable stdin and tty to allow the user to run bash interactively

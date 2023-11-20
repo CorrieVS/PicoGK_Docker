@@ -4,7 +4,7 @@ SHELL ["/bin/bash", "-c"]
 
 # install many dependencies and convenience packages with the apt package manager
 RUN apt update && apt upgrade -y && apt install -y \
-    build-essential clang cmake git x11-apps\
+    sudo build-essential clang cmake git x11-apps\
     cmake-curses-gui cmake-qt-gui \
     dotnet-sdk-7.0 \
     wget apt-utils curl \
@@ -41,6 +41,10 @@ RUN tar -xzvf cmake-3.27.7-linux-x86_64.tar.gz && \
     mv cmake-3.27.7-linux-x86_64 /opt/cmake-3.27.7 && \
     ln -s /opt/cmake-3.27.7/bin/cmake /usr/local/bin/cmake && \
     rm cmake-3.27.7-linux-x86_64.tar.gz
+
+# add the runtime library to the image
+ADD https://github.com/CorrieVS/PicoGK/raw/main/Runtime/linux_x64/picogk.1.0.so /usr/local/lib/picogk.1.0.so
+RUN chmod +rx /usr/local/lib/picogk.1.0.so
 
 SHELL ["/bin/bash", "-l", "-c"]
 
