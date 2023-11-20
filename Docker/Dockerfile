@@ -43,8 +43,8 @@ RUN tar -xzvf cmake-3.27.7-linux-x86_64.tar.gz && \
     rm cmake-3.27.7-linux-x86_64.tar.gz
 
 # add the runtime library to the image
-ADD https://github.com/CorrieVS/PicoGK/raw/main/Runtime/linux_x64/picogk.1.0.so /usr/local/lib/picogk.1.0.so
-RUN chmod +rx /usr/local/lib/picogk.1.0.so
+ADD https://github.com/CorrieVS/PicoGK/raw/f382cc359e8c9901c049daf65d0c8f8f284a907d/Runtime/linux_x64/picogk.1.1.so /usr/local/lib/picogk.1.1.so
+RUN chmod +rx /usr/local/lib/picogk.1.1.so
 
 SHELL ["/bin/bash", "-l", "-c"]
 
