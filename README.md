@@ -78,11 +78,15 @@ Now you can continue with [Getting Started](https://github.com/leap71/PicoGK/blo
 
 Parameters for Docker are set in `Docker/docker-compose.yaml`.
 
-These are set by default to use NVIDIA runtime. Comment them out to not use it (experimental):
+These are set by default to use NVIDIA runtime. Comment them out to not use it, and uncomment the volume `/dev/dri`:
 ```
 runtime: nvidia
 environment:
     - NVIDIA_DRIVER_CAPABILITIES=all
     - NVIDIA_VISIBLE_DEVICES=all
+
+...
+volumes:
+    - /dev/dri:/dev/dri
 ```
 
